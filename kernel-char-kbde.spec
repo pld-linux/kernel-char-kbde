@@ -9,7 +9,7 @@ Source0:	http://dl.sourceforge.net/kbde/kbde-driver-%{version}.tar.gz
 URL:		http://kbde.sourceforge.net/
 Obsoletes:	kbde-driver
 ExclusiveArch:	%{ix86}
-BuildRoot:	%{_builddir}/%{buildsubdir}-install-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Keyboard emulator driver is a Linux kernel module, which allow emulate
