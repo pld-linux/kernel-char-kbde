@@ -1,26 +1,22 @@
-%define my_name    kbde-driver
-%define my_version 1.0.0
-%define my_release 1
 
 %{expand:%%define module_kernel_version %%( if [ "x$MODULE_KERNEL_VERSION" = "x" ]; then uname -r; else echo $MODULE_KERNEL_VERSION; fi)}
-Name:          %{my_name}
-Version:       %{my_version}
-Release:       %{my_release}
-License:       GPL
-Group:         System Environment/Kernel
-Summary:       keyboard emulator driver for kernel %{module_kernel_version}
-Packager:      Valery Reznic <valery_reznic@users.sourceforge.net>
-Source:        %{name}-%{version}.tar.gz
-Url:           http://kbde.sourceforge.net
-ExclusiveOs:   Linux
-ExclusiveArch: i386
-BuildRoot:     %{_builddir}/%{buildsubdir}-install-root
+Summary:	Keyboard emulator driver for kernel %{module_kernel_version}
+Name:		kbde-driver
+Version:	1.0.0
+Release:	1
+License:	GPL
+Group:		System Environment/Kernel
+Source0:	%{name}-%{version}.tar.gz
+URL:		http://kbde.sourceforge.net
+ExclusiveArch:	%{ix86}
+BuildRoot:	%{_builddir}/%{buildsubdir}-install-root
 
 %description
-Keyboard emulator driver is a linux kernel module,
-which allow emulate keyboard input on the x86 computer.
+Keyboard emulator driver is a linux kernel module, which allow emulate
+keyboard input on the x86 computer.
 
 %prep
+
 %setup
 
 %build
@@ -28,17 +24,14 @@ make all
 
 %install
 if [ "$RPM_BUILD_ROOT" != "/" ]; then
-   rm -rf $RPM_BUILD_ROOT
-else
-   :
+	rm -rf $RPM_BUILD_ROOT
 fi
-make install DESTDIR="$RPM_BUILD_ROOT"
+make install \
+	DESTDIR="$RPM_BUILD_ROOT"
 
 %clean
 if [ "$RPM_BUILD_ROOT" != "/" ]; then
-   rm -rf $RPM_BUILD_ROOT
-else
-   :
+	rm -rf $RPM_BUILD_ROOT
 fi
 
 %post
@@ -68,8 +61,3 @@ mknod --mode=200 $kbde_dev c 11 0
 %doc LICENSE
 %doc NEWS
 %doc README
-
-
-%changelog
-* Sun Jun  4 2004 <valery_reznic@users.sourceforge.net> 1.0.0-1
-- Initial public release.
