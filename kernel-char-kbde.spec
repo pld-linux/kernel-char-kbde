@@ -1,5 +1,5 @@
 Summary:	Keyboard emulator driver for Linux kernel
-Summary(pl):	Sterownik emulatora klawiatury dla j±dra Linuksa
+Summary(pl.UTF-8):   Sterownik emulatora klawiatury dla jÄ…dra Linuksa
 Name:		kernel-char-kbde
 Version:	1.0.0
 Release:	1
@@ -15,9 +15,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Keyboard emulator driver is a Linux kernel module, which allow emulate
 keyboard input on the x86 computer.
 
-%description -l pl
-Sterownik emulatora klawiatury to modu³ j±dra Linuksa pozwalaj±cy
-emulowaæ wej¶cie z klawiatury na komputerach x86.
+%description -l pl.UTF-8
+Sterownik emulatora klawiatury to moduÅ‚ jÄ…dra Linuksa pozwalajÄ…cy
+emulowaÄ‡ wejÅ›cie z klawiatury na komputerach x86.
 
 %prep
 %setup -q
