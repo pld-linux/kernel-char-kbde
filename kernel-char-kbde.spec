@@ -1,5 +1,5 @@
 Summary:	Keyboard emulator driver for Linux kernel
-Summary(pl.UTF-8):   Sterownik emulatora klawiatury dla jądra Linuksa
+Summary(pl.UTF-8):	Sterownik emulatora klawiatury dla jądra Linuksa
 Name:		kernel-char-kbde
 Version:	1.0.0
 Release:	1
